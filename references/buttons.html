@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        padding: 1em;
+      }
+      .btn {
+        --button-background: #eee;
+        --accent-color: rgb(84, 141, 239);
+        --popup-size: 4px;
+        display: block;
+        background-color: white;
+        font-size: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0.5em 1.5em;
+        margin-bottom: 0.5em;
+        cursor: pointer;
+        border: none;
+        background-color: var(--button-background);
+        position: relative;
+      }
+
+      .btn.btn-1 {
+        z-index: 1;
+      }
+      .btn.btn-1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        background-color: var(--accent-color);
+        transform: scaleX(0);
+        transition: transform 300ms ease-in-out;
+        transform-origin: left;
+      }
+      .btn.btn-1:hover::before,
+      .btn.btn-1:focus::before {
+        transform: scaleX(1);
+      }
+      .btn.btn-2::before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: top, left, right, bottom, 200ms ease-in-out;
+        border: var(--popup-size) solid var(--button-background);
+      }
+      .btn.btn-2:hover::before,
+      .btn.btn-2:focus::before {
+        top: calc(0px - 2 * var(--popup-size));
+        bottom: calc(0px - 2 * var(--popup-size));
+        left: calc(0px - 2 * var(--popup-size));
+        right: calc(0px - 2 * var(--popup-size));
+      }
+
+      .btn.btn-3 {
+        z-index: 1;
+        background-color: var(--accent-color);
+        overflow: hidden;
+        transition: color 400ms ease-in-out;
+      }
+      .btn.btn-3::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: var(--button-background);
+        border-radius: 50%;
+        transform: scale(1.5);
+        transition: transform 300ms ease-in-out;
+      }
+      .btn.btn-3:hover::before,
+      .btn.btn-3:focus::before {
+        transform: scale(0);
+      }
+      .btn.btn-3:hover,
+      .btn.btn-3:focus {
+        color: white;
+      }
+      .btn.btn-4::before {
+        content: "";
+        position: absolute;
+        /* top: 0; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: var(--popup-size);
+        background-color: var(--accent-color);
+        /* border-bottom: var(--popup-size) solid var(--accent-color); */
+        transition: transform 100ms ease-in-out;
+        transform: scaleX(0);
+      }
+      .btn.btn-4:hover::before {
+        transform: scaleX(1);
+      }
+    </style>
+    <title>Buttons</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn btn-1">Button 1</button
+      ><button class="btn btn-2">Button 2</button
+      ><button class="btn btn-3">Button 3</button
+      ><button class="btn btn-4">Button 4</button>
+    </div>
+  </body>
+</html>

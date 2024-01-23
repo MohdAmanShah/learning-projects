@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        padding: 0.5em;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 0.5em;
+      }
+      .image-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+      .image-wrapper > img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: center;
+      }
+      .image-wrapper > .text {
+        position: absolute;
+        inset: 0;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+      .image-wrapper > img,
+      .image-wrapper > .text {
+        transition: all 300ms ease-in-out;
+      }
+      .image-wrapper:hover > .blur {
+        filter: blur(5px);
+      }
+      .image-wrapper:hover > .zoom-in {
+        transform: scale(1.1);
+      }
+      .image-wrapper:hover > .gray{
+        filter: grayscale(1);
+      }
+
+
+
+      .image-wrapper > .fade-in {
+        opacity: 0;
+      }
+      .image-wrapper:hover > .fade-in {
+        opacity: 1;
+      }
+
+      .image-wrapper > .slide-in-left {
+        transform: translateX(-100%);
+      }
+      .image-wrapper:hover > .slide-in-left {
+        transform: translateX(0);
+      }
+
+      .image-wrapper > .slide-in-right {
+        transform: translateX(100%);
+      }
+      .image-wrapper:hover > .slide-in-right {
+        transform: translateX(0);
+      }
+
+      .image-wrapper > .slide-up {
+        transform: translateY(100%);
+      }
+      .image-wrapper:hover > .slide-up {
+        transform: translateY(0);
+      }
+
+      .image-wrapper > .slide-down {
+        transform: translateY(-100%);
+      }
+      .image-wrapper:hover > .slide-down {
+        transform: translateY(0);
+      }
+    </style>
+    <title>Image Animations</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-wrapper">
+        <img
+          class="blur"
+          src="https://picsum.photos/500?random=1"
+          alt="Image1"
+        />
+        <div class="text fade-in">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+          corporis autem saepe nobis quaerat soluta dignissimos, incidunt, eaque
+          non quam consequuntur? Praesentium autem totam modi distinctio ad
+          provident eveniet repudiandae?
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img
+          class="zoom-in"
+          src="https://picsum.photos/500?random=2"
+          alt="Image2"
+        />
+        <div class="text fade-in">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          eaque, est nostrum maxime amet ducimus quam modi qui itaque possimus
+          quidem quod? Et, velit? Veritatis vitae libero obcaecati aliquam sed.
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://picsum.photos/500?random=3" alt="Image3" />
+        <div class="text slide-in-left">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis amet
+          eos accusamus dicta quidem consequuntur, laboriosam quo voluptate
+          illum quas aut omnis aspernatur obcaecati labore! Suscipit
+          consequuntur qui officiis libero.
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://picsum.photos/500?random=4" alt="Image4" />
+        <div class="text slide-in-right">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quaerat
+          voluptatibus totam culpa neque! Laboriosam enim sed consectetur in
+          sit, nisi laborum, ducimus a inventore officia laudantium modi
+          voluptates explicabo?
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://picsum.photos/500?random=5" alt="Image5" />
+        <div class="text slide-up">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus,
+          laborum architecto itaque pariatur excepturi commodi nulla consequatur
+          aut saepe fuga, impedit voluptatem dignissimos nemo nesciunt quis
+          fugit adipisci, quae soluta!
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img src="https://picsum.photos/500?random=6" alt="Image6" />
+        <div class="text slide-down">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
+          ullam perferendis eligendi aperiam nihil, odit libero accusantium esse
+          ab, blanditiis sunt aut necessitatibus laboriosam unde eum sapiente
+          similique repudiandae reiciendis!
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img
+          class="blur"
+          src="https://picsum.photos/500?random=7"
+          alt="Image7"
+        />
+        <div class="text slide-in-left">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+          eligendi maxime quae, mollitia voluptates est impedit hic earum enim
+          voluptas blanditiis praesentium quidem non adipisci sed quos
+          quibusdam, dolor culpa!list-group-item
+        </div>
+      </div>
+      <div class="image-wrapper">
+        <img
+          class="gray"
+          src="https://picsum.photos/500?random=8"
+          alt="Image8"
+        />
+        <div class="text slide-in-left">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
+          adipisci id veniam quibusdam commodi nam iste odio totam, saepe
+          nostrum repellat architecto distinctio. Rem in recusandae accusamus,
+          praesentium perspiciatis eaque?
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

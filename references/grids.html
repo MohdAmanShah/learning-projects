@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        outline: 0;
+        border: none;
+      }
+      .grid-item {
+        font-size: 2rem;
+        padding: 0.5em 0 0 0.5em;
+        box-shadow: 0px 0px 0px 1px black;
+        background-color: azure;
+      }
+      .grid-container {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 200px 300px 400px;
+        grid-auto-rows: 150px;
+        gap: 0.5em;
+      }
+    </style>
+    <title>grids</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item grid-item-1">1</div>
+      <div class="grid-item grid-item-2">2</div>
+      <div class="grid-item grid-item-3">3</div>
+      <div class="grid-item grid-item-4">4</div>
+      <div class="grid-item grid-item-5">5</div>
+      <div class="grid-item grid-item-6">6</div>
+      <div class="grid-item grid-item-7">7</div>
+      <div class="grid-item grid-item-8">8</div>
+      <div class="grid-item grid-item-9">9</div>
+      <div class="grid-item grid-item-10">10</div>
+    </div>
+      </body>
+</html>

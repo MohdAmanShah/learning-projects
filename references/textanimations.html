@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --background: linear-gradient(45deg, #02001f, #1f1b4e);
+        --text-color: #ff2c75;
+      }
+
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .list {
+        margin: 0;
+        padding: 0;
+        padding-top: 25px;
+        list-style: none;
+      }
+
+      .list-item {
+        position: relative;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        width: max-content;
+      }
+
+      .list-item > .split-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        transition: color 0ms 200ms;
+      }
+
+      .list-item:hover > .split-text {
+        color: transparent;
+        user-select: none;
+        transition-delay: 0ms;
+      }
+      .list-item:hover > .split-text::before,
+      .list-item:hover > .split-text::after {
+        color: white;
+        transform: skewX(15deg);
+      }
+      .list-item > .split-text::before,
+      .list-item > .split-text::after {
+        position: absolute;
+        content: attr(data-text);
+        height: calc(0.5em);
+        overflow: hidden;
+        left: 0;
+        right: 0;
+        color: var(--text-color);
+        transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+        user-select: none;
+      }
+
+      .list-item > .split-text::after {
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .list-item::before {
+        content: "";
+        position: absolute;
+        width: 110%;
+        left: -5%;
+        top: calc(50% - 1px);
+        height: 2px;
+        transform: scale(0);
+        background-color: var(--text-color);
+        border-radius: 20px;
+        z-index: 1;
+        transition: transform 200ms ease-in-out;
+      }
+
+      .list-item:hover::before {
+        transform: scale(1);
+      }
+    </style>
+
+    <title>Text Animations</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li class="list-item">
+        <span class="split-text" data-text="HOME">HOME</span>
+      </li>
+      <li class="list-item">
+        <span class="split-text" data-text="ABOUT">ABOUT</span>
+      </li>
+      <li class="list-item">
+        <span class="split-text" data-text="WORK">WORK</span>
+      </li>
+      <li class="list-item">
+        <span class="split-text" data-text="CONTACT">CONTACT</span>
+      </li>
+    </ul>
+  </body>
+</html>

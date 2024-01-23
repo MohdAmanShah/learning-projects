@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --color: hsl(200, 50%, 50%);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1em;
+        align-items: start;
+      }
+      .card {
+        background-color: white;
+        border-radius: 0.25rem;
+        overflow: hidden;
+      }
+      .card-1 {
+        border: 1px solid black;
+      }
+      .card-2 {
+        box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.442);
+      }
+      .card-header {
+        padding: 1em;
+        padding-bottom: 0;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .card-header.card-image {
+        padding: 0;
+        overflow: hidden;
+      }
+      .card-header.card-image > img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        object-position: center;
+        max-height: 200px;
+        transition: transform 200ms ease-in-out;
+      }
+      .card:hover > .card-header.card-image > img {
+        transform: scale(1.025);
+      }
+      .card-body {
+        padding: 0 1em;
+        font-size: 0.9rem;
+      }
+      .card-footer {
+        padding: 0 1em;
+        padding-bottom: 1em;
+        margin-top: 1rem;
+      }
+      .butn {
+        background-color: hsl(200, 50%, 50%);
+        color: white;
+        border: none;
+        font-size: 1em;
+        padding: 0.5em 0.75em;
+        border-radius: 0.25em;
+        cursor: pointer;
+      }
+      .butn:hover,
+      .butn:focus {
+        background: hsl(200, 50%, 60%);
+      }
+      .butn.butn-outline {
+        background: none;
+        border: 1px solid var(--color);
+        color: var(--color);
+      }
+      .butn.butn-outline:hover,
+      .butn.butn-outline:focus {
+        background-color: hsl(200, 50%, 90%);
+      }
+    </style>
+
+    <title>Cards</title>
+  </head>
+  <body>
+    <div class="card-grid">
+      <div class="card card-1">
+        <div class="card-header">123 Main St.</div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus ipsa ea libero ab porro illum dolor deleniti quod sed,
+          enim sit delectus modi sequi repellendus, ipsum quo totam alias amet?
+        </div>
+        <div class="card-footer">
+          <button class="butn">Details</button>
+          <button class="butn butn-outline">Contact Seller</button>
+        </div>
+      </div>
+      <div class="card card-2">
+        <div class="card-header">123 Main St.</div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus ipsa ea libero ab porro illum dolor deleniti quod sed,
+          enim sit delectus modi sequi repellendus, ipsum quo totam alias amet?
+        </div>
+        <div class="card-footer">
+          <button class="butn">Details</button>
+          <button class="butn butn-outline">Contact Seller</button>
+        </div>
+      </div>
+      <div class="card card-2">
+        <div class="card-header card-image">
+          <img src="https://source.unsplash.com/uOYak90r4L0" alt="House1" />
+        </div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus ipsa ea libero ab porro illum dolor deleniti quod sed,
+          enim sit delectus modi sequi repellendus, ipsum quo totam alias amet?
+        </div>
+        <div class="card-footer">
+          <button class="butn">Details</button>
+          <button class="butn butn-outline">Contact Seller</button>
+        </div>
+      </div>
+      <div class="card card-2">
+        <div class="card-header card-image">
+          <img src="https://source.unsplash.com/eWqOgJ-lfiI" alt="House1" />
+        </div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus ipsa ea libero ab porro illum dolor deleniti quod sed,
+          enim sit delectus modi sequi repellendus, ipsum quo totam alias amet?
+        </div>
+        <div class="card-footer">
+          <button class="butn">Details</button>
+          <button class="butn butn-outline">Contact Seller</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
