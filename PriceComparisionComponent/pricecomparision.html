@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --accent-color: #641bff;
+        --heading-font-family: "Poppins", sans-serif;
+        --body-font-family: "Lato", sans-serif;
+      }
+      .prices-wrapper {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      .price-column {
+        font-family: var(--body-font-family);
+        border-radius: 5px;
+        padding: 2rem;
+        background-color: #f8f9fb;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 4px 2px rgb(215, 214, 214);
+        width: max-contents;
+        height: max-content;
+      }
+      .price-column.most-popular {
+        position: relative;
+        background-color: var(--accent-color);
+        padding: 4rem 2rem;
+        transform: translateY(-2rem);
+        color: white;
+      }
+      .price-column.most-popular::before {
+        content: "MOST POPULAR";
+        font-weight: bolder;
+        position: absolute;
+        top: 0.5em;
+        left: 50%;
+        width: max-content;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+      }
+      .price-column.most-popular .btn {
+        background-color: white;
+        color: var(--accent-color);
+        box-shadow: 0 2px 4px 2px var(--accent-color);
+      }
+      .price-header {
+        padding: 1.5rem 1rem;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .price-rate {
+        display: flex;
+        font-weight: bolder;
+      }
+      .price-rate .price {
+        font-family: var(--heading-font-family);
+        font-size: 3.5rem;
+      }
+      .per-month {
+        line-height: 4.5rem;
+      }
+      .currency {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .divider {
+        height: 1px;
+        background-color: rgb(226, 225, 225);
+      }
+
+      .type {
+        margin-top: 1em;
+        font-weight: bold;
+      }
+      .features-list {
+        padding: 2em 2em;
+      }
+      .feature {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+      }
+      .feature-disabled {
+        color: gray;
+        text-decoration: line-through;
+      }
+      .btn-wrapper {
+        padding: 0 1rem;
+      }
+      .btn {
+        border: 0;
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 1em 0.75em;
+        background-color: var(--accent-color);
+        cursor: pointer;
+      }
+      .btn-wrapper:hover > .btn {
+        transform: scale(1.1);
+      }
+    </style>
+    <title>Price Comparision</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="prices-wrapper">
+        <section class="price-column">
+          <div class="price-header">
+            <div class="price-rate">
+              <div class="currency">$</div>
+              <div class="price">10</div>
+              <div class="per-month">/MO</div>
+            </div>
+            <div class="type">BASIC</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="features-list">
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature feature-disabled">Feature</div>
+            <div class="feature feature-disabled">Feature</div>
+            <div class="feature feature-disabled">Feature</div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn">Start Today</button>
+          </div>
+        </section>
+        <section class="price-column most-popular">
+          <div class="price-header">
+            <div class="price-rate">
+              <div class="currency">$</div>
+              <div class="price">20</div>
+              <div class="per-month">/MO</div>
+            </div>
+            <div class="type">PROFESSIONAL</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="features-list">
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn">Start Today</button>
+          </div>
+        </section>
+        <section class="price-column">
+          <div class="price-header">
+            <div class="price-rate">
+              <div class="currency">$</div>
+              <div class="price">50</div>
+              <div class="per-month">/mon</div>
+            </div>
+            <div class="type">ENTERPRISE</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="features-list">
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+            <div class="feature">Feature</div>
+          </div>
+          <div class="btn-wrapper">
+            <button class="btn">Start Today</button>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
