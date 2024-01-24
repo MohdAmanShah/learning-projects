@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --avatar-size: 70px;
+        --grid-gap: 1.5em;
+        --subdued-color: #07a0e7;
+        --text-color: #4acdee;
+        --message-box-bg: #f3f3f3;
+        --notification-icon-size: 2rem;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        padding: 1em;
+      }
+      .group-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: var(--grid-gap);
+        padding: calc(var(--grid-gap) * 1.5) 0rem;
+      }
+      .group-header > .group-title {
+        font-size: 1.5rem;
+        color: var(--text-color);
+      }
+      .group-header > .group-date {
+        font-size: 1.25rem;
+        color: var(--subdued-color);
+      }
+      .group-header::after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: var(--subdued-color);
+      }
+      .notification-grid {
+        display: grid;
+        grid-template-columns: var(--avatar-size) 1fr;
+        column-gap: var(--grid-gap);
+        row-gap: calc(var(--grid-gap) * 1.5);
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .avatar {
+        position: relative;
+      }
+      .avatar > img {
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+      }
+      .avatar::before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: calc(var(--grid-gap) * -1.5);
+        bottom: 0;
+        background-color: var(--subdued-color);
+      }
+      .avatar:nth-last-child(2)::before {
+        bottom: 100%;
+      }
+      .message {
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid var(--subdued-color);
+        border-radius: 5px;
+        background-color: var(--message-box-bg);
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+      }
+      .message > .message-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      .message-header > .message-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+      }
+      .message-content {
+        color: var(--text-color);
+        border-radius: 5px;
+        font-size: 1.5rem;
+        margin: 0 1rem;
+      }
+      .message-time {
+        font-size: 1.5rem;
+        color: var(--subdued-color);
+        font-family: "Times New Roman", Times, serif;
+      }
+      .notification-icon {
+        margin-right: 0.5em;
+        color: var(--subdued-color);
+        width: var(--notification-icon-size);
+        height: var(--notification-icon-size);
+      }
+    </style>
+    <title>Timeline</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="timeline">
+        <div class="group-header">
+          <div class="group-title">Today</div>
+          <div class="group-date">23/01/2024</div>
+        </div>
+        <div class="notification-grid">
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate numquam iusto error voluptate facere repellat illum
+              vero adipisci, fugit aperiam.
+            </div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content"></div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content"></div>
+          </div>
+        </div>
+      </section>
+      <section class="timeline">
+        <div class="group-header">
+          <div class="group-title">Today</div>
+          <div class="group-date">23/01/2024</div>
+        </div>
+        <div class="notification-grid">
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Cupiditate numquam iusto error voluptate facere repellat illum
+              vero adipisci, fugit aperiam.
+            </div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content"></div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <div class="avatar">
+            <img src="https://source.unsplash.com/A116mj5sNfg" alt="avatar" />
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <div class="message-title">
+                <svg
+                  class="notification-icon"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                  />
+                </svg>
+                Avatar Liked It
+              </div>
+              <div class="message-time">9:02pm</div>
+            </div>
+            <div class="message-content"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
