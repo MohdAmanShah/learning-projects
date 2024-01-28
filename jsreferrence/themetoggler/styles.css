@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+:root {
+  --icon-size: 60px;
+  --body-bg: white;
+  --toggle-button-bg: orangered;
+  --toggle-button-text-color: var(--body-bg);
+  --icon-height: 50vh;
+  --rotation: 0deg;
+  --opacity-sun: 1;
+  --opacity-moon: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-bg);
+  transition: background-color  300ms linear;
+}
+svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.toggle-button {
+  display: flex;
+  padding: 1rem 2rem;
+  transition: background-color  300ms linear;
+  background-color: var(--toggle-button-bg);
+  border: 0;
+  border-radius: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.toggle-button > p {
+  transition: color  300ms linear;
+  color: var(--toggle-button-text-color);
+  font-size: 2rem;
+}
+.toggle-button > svg {
+  transition: fill  300ms linear;
+  fill: var(--toggle-button-text-color);
+}
+.icon-wrapper {
+  position: absolute;
+  height: 90vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotate(var(--rotation));
+  transition: transform 1s linear;
+  user-select: none;
+  z-index: -10;
+}
+.icon-wrapper > svg {
+  fill: var(--toggle-button-bg);
+}
+.moon {
+  opacity: var(--opacity-moon);
+  transform: rotate(180deg);
+  transition-delay: 500ms;
+}
+.sun {
+  opacity: var(--opacity-sun);
+  transition-delay: 500ms;
+}

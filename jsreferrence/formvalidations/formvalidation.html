@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form id="form" method="post">
+      <div id="error"></div>
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          required
+          aria-required="true"
+        />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          aria-required="true"
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      const Form = document.getElementById("form");
+      const Username = document.getElementById("username");
+      const Password = document.getElementById("password");
+      const Error = document.getElementById("error");
+      let message = [];
+      Form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        if(Username.value.length <= 4)
+        {
+            message.push('username too short length must be between 6 and 20');
+        }
+        Error.innerText = message.join(', ');
+    })
+    </script>
+  </body>
+</html>
