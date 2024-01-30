@@ -42,6 +42,10 @@
         {
             message.push('username too short length must be between 6 and 20');
         }
+        if(Username.value.length >= 30)
+        {
+            message.push('username too short length must be between 6 and 20');
+        }
         Error.innerText = message.join(', ');
     })
     </script>
