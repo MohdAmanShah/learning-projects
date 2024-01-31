@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      #unmovable-button{
+      #untouchable-button {
         font-size: 2rem;
+        position: absolute;
+        left: 300px;
+        top: 300px;
+        text-wrap: nowrap;
       }
-      body{
+      body {
         margin: 0;
         height: 100vh;
         width: 100vw;
         overflow: hidden;
       }
     </style>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Untouchable button</title>
   </head>
   <body>
-    <button id="unmovable-button">Can't Press Me</button>
+    <button id="untouchable-button">Can't Press Me</button>
   </body>
 </html>
