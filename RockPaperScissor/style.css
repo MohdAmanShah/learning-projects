@@ -1,0 +1,66 @@
+.container {
+  background-color: rgb(188, 188, 188);
+  height: 100vh;
+}
+.container > div {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 768px;
+}
+.selections > button {
+  cursor: pointer;
+  display: block;
+  font-size: 8rem;
+  background-color: transparent;
+  border: none;
+  text-shadow: 2px 2px 5px black, -2px -2px 5px black;
+}
+.selections > button:hover {
+  transform: scale(1.2);
+}
+.container > .scores {
+  margin-top: 2rem;
+}
+.scores > div {
+  font-size: 2rem;
+  font-variant: small-caps;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+}
+#matchResult {
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: unset;
+  row-gap: 1rem;
+  overflow-y: scroll;
+}
+#matchResult::-webkit-scrollbar {
+  width: 0;
+}
+#matchResult > article {
+  transition: background-color 1s ease-in-out;
+  background-color: rgba(99, 99, 99, 0.627);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 5rem;
+}
+#matchResult > article > div {
+  opacity: 0.5;
+  text-shadow: 2px 2px 5px black, -2px -2px 5px black;
+}
+#matchResult > article > .winner {
+  opacity: 1;
+  font-size: 6rem;
+}
+
+#matchResult > article > div:nth-child(2) {
+  opacity: 1;
+  font-size: 2rem;
+  text-shadow: none;
+  color: rgb(61, 61, 61);
+}

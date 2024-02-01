@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="theme.css" />
     <style>
-      *,
-      *::after,
-      *::before {
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 0;
-        margin: 0;
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      h1 {
+        margin: 1rem 0;
+        padding-bottom: 1rem;
+        border-bottom: 5px solid black;
       }
       a {
         display: block;
@@ -26,13 +29,8 @@
       a:hover {
         background-color: rgb(91, 218, 218);
       }
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5em;
-      }
+
       .project {
-        flex: 1 1 300px;
         display: flex;
         gap: 10px;
         flex-direction: column;
@@ -41,7 +39,7 @@
         padding: 1.5em;
         border-radius: 0.5em;
         background-color: whitesmoke;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.374);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.374);
       }
       .project > h3 {
         text-align: center;
@@ -50,80 +48,86 @@
     <title>Home</title>
   </head>
   <body>
-    <h1>Projects</h1>
     <div class="container">
-      <div class="project">
-        <h3>Transparent Login Form</h3>
-        <a href="./TransparentLoginForm/transparentloginform.html"
-          >open project
-        </a>
-      </div>
-      <div class="project">
-        <h3>Cards</h3>
-        <a href="./Card/ICards.html">open project</a>
-      </div>
-      <div class="project">
-        <h3>Grid reference</h3>
-        <a href="./references/grids.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS Tooltip reference</h3>
-        <a href="./references/csstooltip.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS buttons reference</h3>
-        <a href="./references/buttons.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS Text Animations reference</h3>
-        <a href="./references/textanimations.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS Image Animations reference</h3>
-        <a href="./references/imageanimations.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS checkbox togglers reference</h3>
-        <a href="./references/togglers.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS animations reference</h3>
-        <a href="./references/animations.html">open referrence</a>
-      </div>
-      <div class="project">
-        <h3>CSS Price comparision component</h3>
-        <a href="./PriceComparisionComponent/pricecomparision.html"
-          >open project</a
-        >
-      </div>
-      <div class="project">
-        <h3>Timeline</h3>
-        <a href="./Timeline/timeline.html">open project</a>
-      </div>
-      <div class="project">
-        <h3>Youtube Clone design</h3>
-        <a href="./YoutubeClone/youtubeclone.html">open project</a>
-      </div>
-      <div class="project">
-        <h3>Form validation using Javascript</h3>
-        <a href="./jsreferrence/formvalidations/formvalidation.html"
-          >open referrence</a
-        >
-      </div>
+      <h1>Projects</h1>
+      <div class="projects">
+        <div class="project">
+          <h3>Transparent Login Form</h3>
+          <a href="./TransparentLoginForm/transparentloginform.html"
+            >open project
+          </a>
+        </div>
+        <div class="project">
+          <h3>Cards</h3>
+          <a href="./Card/ICards.html">open project</a>
+        </div>
+        <div class="project">
+          <h3>Grid reference</h3>
+          <a href="./references/grids.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS Tooltip reference</h3>
+          <a href="./references/csstooltip.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS buttons reference</h3>
+          <a href="./references/buttons.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS Text Animations reference</h3>
+          <a href="./references/textanimations.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS Image Animations reference</h3>
+          <a href="./references/imageanimations.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS checkbox togglers reference</h3>
+          <a href="./references/togglers.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS animations reference</h3>
+          <a href="./references/animations.html">open referrence</a>
+        </div>
+        <div class="project">
+          <h3>CSS Price comparision component</h3>
+          <a href="./PriceComparisionComponent/pricecomparision.html"
+            >open project</a
+          >
+        </div>
+        <div class="project">
+          <h3>Timeline</h3>
+          <a href="./Timeline/timeline.html">open project</a>
+        </div>
+        <div class="project">
+          <h3>Youtube Clone design</h3>
+          <a href="./YoutubeClone/youtubeclone.html">open project</a>
+        </div>
+        <div class="project">
+          <h3>Form validation using Javascript</h3>
+          <a href="./jsreferrence/formvalidations/formvalidation.html"
+            >open referrence</a
+          >
+        </div>
 
-      <div class="project">
-        <h3>Simple Theme Toggle</h3>
-        <a href="./jsreferrence/themetoggler/themestoggler.html"
-          >open referrence</a
-        >
-      </div>
-      <div class="project">
-        <h3>Untouchable Button</h3>
-        <a href="./UntouchagleButton/index.html">open project</a>
-      </div>
-      <div class="project">
-        <h3>Simple Tab Reference</h3>
-        <a href="./jsreferrence/simpleTabs/index.html">open project</a>
+        <div class="project">
+          <h3>Simple Theme Toggle</h3>
+          <a href="./jsreferrence/themetoggler/themestoggler.html"
+            >open referrence</a
+          >
+        </div>
+        <div class="project">
+          <h3>Untouchable Button</h3>
+          <a href="./UntouchagleButton/index.html">open project</a>
+        </div>
+        <div class="project">
+          <h3>Simple Tab Reference</h3>
+          <a href="./jsreferrence/simpleTabs/index.html">open reference</a>
+        </div>
+        <div class="project">
+          <h3>Rock Paper Scissor</h3>
+          <a href="./RockPaperScissor/index.html">open project</a>
+        </div>
       </div>
     </div>
   </body>
