@@ -53,10 +53,12 @@ function GameEventHandler(e) {
     UserScore++;
     UserScoreElement.innerHTML = `User Score ${UserScore}`;
     result.innerHTML = "You won";
+    user.classList.add("winner");
   } else {
     result.innerHTML = "Computer won";
     ComputerScore++;
     ComputerScoreElement.innerHTML = `User Score ${ComputerScore}`;
+    computer.classList.add("winner");
   }
   element.append(user, result, computer);
   matchResult.append(element);
