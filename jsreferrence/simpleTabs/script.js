@@ -13,3 +13,4 @@ function LinkEventHandler(element) {
   element.target.classList.add("active");
   document.querySelector(element.target.dataset.tabTarget).classList.add("active");
 }
+//change
