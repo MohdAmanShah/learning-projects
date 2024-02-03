@@ -6,7 +6,8 @@ const VoiceList = document.getElementById("Voices");
 let IsPaused = false;
 let Voices = [];
 let currentCharacter = 0;
-let TextToPlay = TextBox.value || "MDN is stupid and so is Google and Apple.";
+let TextToPlay =
+  TextBox.value || "Code is like humor. When you have to explain it, it’s bad.";
 const EnglishVoices = [];
 
 if ("speechSynthesis" in window) {
@@ -31,7 +32,7 @@ if ("speechSynthesis" in window) {
   StopButton.onclick = StopButtonEventHandler;
 
   TextBox.onchange = () => {
-    TextToPlay = TextBox.value || "MDN is stupid and so is Google and Apple.";
+    TextToPlay = TextBox.value || TextToPlay;
     utterence.text = TextToPlay;
   };
 

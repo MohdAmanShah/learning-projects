@@ -1,7 +1,7 @@
 const Projects = document.getElementById("projects");
 fetchProject();
 async function fetchProject() {
-  let ProjectJson = await fetch("/Scripts/projects.json");
+  let ProjectJson = await fetch("Scripts/projects.json");
   const text = await ProjectJson.text();
   ProjectJson = JSON.parse(text).Project;
   Array.from(ProjectJson).forEach((element) => {

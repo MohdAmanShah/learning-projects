@@ -90,6 +90,10 @@
       "Name": "Text - Speech",
       "Href": "./TextToSpeech/index.html",
       "Description": ""
+    },
+    {
+      "Name": "Ping Pong",
+      "Href": "./PingPong/index.html"
     }
   ]
 }
