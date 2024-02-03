@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: rgb(255, 204, 210);
+  --accent-color: red;
+  --text-box-bg: rgb(255, 255, 255);
+  --text-box-radius: 2rem;
+  --popup-size: 8px;
+}
+body {
+  background-color: var(--body-bg);
+}
+.container {
+  width: 90%;
+  max-width: 1390px;
+  margin: 0 auto;
+  max-height: 100vh;
+}
+main,
+section {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+#text-box,
+.controls {
+  display: block;
+  width: 100%;
+}
+.text-box {
+  border-radius: var(--text-box-radius);
+  border: 4px solid red;
+  margin: 0 0 4rem 0;
+}
+#text-box {
+  display: block;
+  min-height: 50vh;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 0px;
+  background-color: var(--text-box-bg);
+  border-radius: var(--text-box-radius);
+  overflow: scroll;
+  resize: 0;
+}
+#text-box::-webkit-scrollbar {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+section {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+select {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #333;
+  color: black;
+  appearance: none; /* Remove default styles on some browsers */
+}
+
+/* Style the option element */
+option {
+  background-color: #fff;
+  color: #333;
+}

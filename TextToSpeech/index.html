@@ -4,10 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="script.js"></script>
+    <script defer type="module" src="script.js"></script>
     <title>Text - Speech</title>
   </head>
   <body>
-    
+    <div class="container">
+        <main>
+          <div class="text-box">
+            <textarea id="text-box" placeholder="Text here" ></textarea>
+          </div>
+            <input type="range" name="Volume" id="Volume" min="0" max="100" value="50">
+            <input type="range" name="Pitch" id="Pitch" min="0" max="100" value="50">
+            <input type="range" name="Rate" id="Rate" min="0.5" max="4" value="1" step=".5">
+            <div class="controls">
+              <button id="play-button" type="button">Play</button>
+              <button id="pause-button" type="button">Pause</button>
+              <button id="stop-button" type="button">Stop</button>
+              <button id="mic" type="button">Mic</button> 
+        </main>
+        <section>
+            <div class="download-speech"><button type="button">Download</button></div>
+            <div class="voice-selection"><select name="voices" id="Voices">
+            </select></div>
+            </section>
+      </div>
+    </div>
   </body>
 </html>
