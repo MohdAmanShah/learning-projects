@@ -50,7 +50,7 @@ section {
   background-color: var(--text-box-bg);
   border-radius: var(--text-box-radius);
   overflow: scroll;
-  resize: 0;
+  resize: none;
 }
 #text-box::-webkit-scrollbar {
   display: none;
