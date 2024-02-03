@@ -69,12 +69,14 @@ function isInInner(button, mouse) {
 //   };
 // }
 
+// formula to mirror a moving point with respect to a fixed point
+// mirrorX = 2 * fixedX - movingX
+// mirrorY = 2 * fixedY - movingY
+
 function getMirroredPosition(button, mouse) {
   buttonCenterX = button.x + button.width / 2;
   buttonCenterY = button.y + button.height / 2;
-  // formula to mirror a moving point with respect to a fixed point
-  // mirrorX = 2 * fixedX - movingX
-  // mirrorY = 2 * fixedY - movingY
+
   mirroredX = 2 * buttonCenterX - mouse.X;
   mirroredY = 2 * buttonCenterY - mouse.Y;
   return {
