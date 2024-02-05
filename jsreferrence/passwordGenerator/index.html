@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #333;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        background-color: #006699;
+        border-radius: 1rem;
+        border: 3px solid black;
+        padding: 1rem 2rem;
+      }
+      .container > h1 {
+        margin: 0;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 2rem;
+        color: #fefefe;
+      }
+      .PasswordCustomization {
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem;
+        column-gap: 2rem;
+      }
+
+      .Generatedpassword {
+        display: flex;
+        padding: 1rem 2rem;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        width: 30rem;
+        color: black;
+        font-weight: bold;
+        word-break: break-all;
+        grid-column: 1/3;
+        background-color: #dde9ef;
+        border-radius: 0.5rem;
+      }
+      .Generatedpassword:hover{
+        background-color: rgba(255, 255, 255, 0.68);
+      }
+
+      .submitButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2rem;
+        color: black;
+        font-weight: bold;
+        grid-column: 1/3;
+        background-color: White;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        border-color: black;
+        border-style: solid;
+      }
+      .submitButton:hover {
+        background-color: #ffffff7f;
+        color: white;
+        border-color: white;
+      }
+      label:not(label.Generatedpassword) {
+        user-select: none;
+      }
+    </style>
+    <script src="./script.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <form
+        action="post"
+        class="PasswordCustomization"
+        id="PasswordCustomization"
+      >
+        <label class="Generatedpassword" id="Generatedpassword"></label>
+
+        <label for="NumberOfCharacters">Number of Characters</label>
+        <div>
+          <input
+            type="range"
+            name="NumberOfCharactersSlider"
+            id="NumberOfCharactersSlider"
+            min="0"
+            max="50"
+            value="10"
+          />
+          <input
+            type="number"
+            name="NumberOfCharacters"
+            id="NumberOfCharacters"
+            min="0"
+            max="50"
+            step="1"
+            value="10"
+          />
+        </div>
+
+        <label for="IncludeUpperCaseCharacters"
+          >Include UpperCase Characters</label
+        >
+        <input
+          type="checkbox"
+          name="IncludeUpperCaseCharacters"
+          id="IncludeUpperCaseCharacters"
+        />
+
+        <label for="IncludeNumbers">Include Numbers</label>
+        <input type="checkbox" name="IncludeNumbers" id="IncludeNumbers" />
+
+        <label for="IncludeSpecialCharacters">Include Special Characters</label>
+        <input
+          type="checkbox"
+          name="IncludeSpecialCharacters"
+          id="IncludeSpecialCharacters"
+        />
+
+        <button class="submitButton" type="submit">Generate Password</button>
+      </form>
+    </div>
+  </body>
+</html>
