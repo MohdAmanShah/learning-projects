@@ -93,7 +93,13 @@
     },
     {
       "Name": "Ping Pong",
-      "Href": "./PingPong/index.html"
+      "Href": "./PingPong/index.html",
+      "Description": ""
+    },
+    {
+      "Name": "Password Strength Tester",
+      "Href": "./jsreferrence/passwordStrengthTest/index.html",
+      "Description": ""
     }
   ]
 }
